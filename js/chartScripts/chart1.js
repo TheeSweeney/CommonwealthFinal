@@ -426,6 +426,9 @@ resizeChart1.call(chartOne, {
 
 var resizeTimerOne;
 window.addEventListener('resize', function(e){
-  if(window.outerWidth < 1100) resizeChart1.call(chartOne)
+  clearTimeout(resizeTimerOne)
+  resizeTimerOne = setTimeout(function(){
+    resizeChart1.call(chartOne)
+  }, 200)
 })                  
 
