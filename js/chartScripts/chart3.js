@@ -17,7 +17,7 @@ if(window.outerWidth > 914){
 
 var margin = {
   top: 0,
-  bottom: 100,
+  bottom: 60,
   left: 15,
   right: 30
 };
@@ -290,7 +290,7 @@ function plot(params){
         .append('text')
         .attr('id', 'note')
         .attr('x',0)
-        .attr('y', params.height + 75)
+        .attr('y', params.height + 50)
         .classed('alignLeft', true)
         .html('Note: See the methodology appendix for a description of how the performance score is calculated.')
   //TODO: factor out text for labels, and note so plot() can but used on different charts
