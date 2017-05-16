@@ -551,18 +551,23 @@ plot.call(chart, {
   width: width
 });
 
-
+var resizeTimerThree;
 //responsive bahavior
 window.addEventListener('resize', function(e){
-  resizeChart3.call(chart, {
-    data: currentDataSet,
-    title: currentTitle,
-    axis: {
-      x: xAxis,
-      y: yAxis
-    },
-    initialize: false,
-  });
-  }, true)
+  clearTimeout(resizeTimerThree);
+  resizeTimerThree = setTimeout(function(){
+    if(window.outerWidth < 1100){
+      resizeChart3.call(chart, {
+        data: currentDataSet,
+        title: currentTitle,
+        axis: {
+          x: xAxis,
+          y: yAxis
+        },
+        initialize: false,
+      });
+    }
+  }, 200)
+}, true)
 
 })
