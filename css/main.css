@@ -5,7 +5,7 @@
 
 #container1 text {
 	fill: #ccc;
-	font-size: 12px;
+	font-size: 11px;
 }
 
 #container1 .axis path, .axis line{
@@ -21,7 +21,7 @@
 #container1 .chartOnetrendline{
 	fill: none;
 	stroke: #ccc;
-	stroke-width: 3px;
+	stroke-width: 2px;
 }
 
 #container1 .gridline line{
@@ -30,10 +30,6 @@
 	shape-rendering: crispEdges;
 }
 
-#container1 #chartTitle{
-	font-size: 29px;
-	fill: black;
-}
 
 #container1 .key{
 	cursor: default;
@@ -51,7 +47,7 @@
 
 #container1 #infoBubble{
 	fill: white;
-	stroke-width: 3px;
+	stroke-width: 2px;
 }
 
 #container1 #infoBubbleYear{
@@ -59,7 +55,7 @@
 }
 
 #container1 #infoBubbleGDP{
-	font-size: 30px;
+	font-size: 19px;
 }
 
 #container1 #UnitedStatesline, #container1 .UnitedStateschartOneInfoBox{

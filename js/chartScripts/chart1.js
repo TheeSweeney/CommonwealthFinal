@@ -55,21 +55,21 @@ function plotChart1Axes(params){//TODO duplicated in ex4
   d3.select('.display1')//Note  TODO must be more efficient way to add multiline notes
     .append('text')
     .classed('chartOnenote', true)
-    .attr('x', -30)
+    .attr('x', -20)
     .attr('y', height + 70)
     .classed('alignLeft', true)
     .html('GDP refers to gross domestic product.')
   d3.select('.display1')//Note
     .append('text')
     .classed('chartOnenote', true)
-    .attr('x', -30)
+    .attr('x', -20)
     .attr('y', height + 80)
     .classed('alignLeft', true)
     .html('Source: OECD Health Data 2016. Note: Australia, Germany, Japan, Netherlands and Switzerland data is for current ')
   d3.select('.display1')//Note
     .append('text')
     .classed('chartOnenote', true)
-    .attr('x', -30)
+    .attr('x', -20)
     .attr('y', height + 90)
     .classed('alignLeft', true)
     .html('spending only, and excludes spending on capital formation of health care providers.')
@@ -159,15 +159,15 @@ function infoHover(d, country){
       .enter()
         .append('rect')
         .attr('x', function(d){
-          return xOne(d.year) - 30;
+          return d.year < 1987 ? xOne(1987) - 60 : xOne(d.year) - 60;
         })
         .attr('y', function(d){
-          return y(d.value) - 60;
+          return y(d.value) - 40;
         })
         .attr('rx', 5)
         .attr('ry', 5)        
-        .attr('height', 50)
-        .attr('width', 125)
+        .attr('height', 25)
+        .attr('width', 80)
         .attr('id', 'infoBubble')
         .classed( country + 'InfoBox', true)
   
@@ -176,7 +176,7 @@ function infoHover(d, country){
       .enter()
         .append('text')
         .attr('x', function(d){
-          return xOne(d.year) - 25;
+          return d.year < 1987 ? xOne(1987) - 58 : xOne(d.year) - 58;
         })
         .attr('y', function(d){
           return y(d.value) - 20;
@@ -192,7 +192,7 @@ function infoHover(d, country){
       .enter()
         .append('text')
         .attr('x', function(d){
-          return xOne(d.year) + 5;
+          return d.year < 1987 ? xOne(1987) - 30 : xOne(d.year) - 30;
         })
         .attr('y', function(d){
           return y(d.value) - 20;
@@ -319,8 +319,13 @@ function plotChart1LineAndPoints(params){
 }
 
 function resizeChart1(){
-  w = window.outerWidth > 1100 ? 600 : window.outerWidth * .53;
-  h = .617647 * w - 50;
+  if(window.outerWidth > 900){
+    w = window.outerWidth > 1100 ? 600 : window.outerWidth * .53;
+    h = .617647 * w - 50;
+  }else{
+    w = window.outerWidth - 30
+    h = .5 * w
+  }
 
   width = w - marginOne.left - marginOne.right;
   height = h - marginOne.top - marginOne.bottom; 
@@ -405,7 +410,6 @@ resizeChart1.call(chartOne, {
     gridlines: yGridlines
   }
 })
-
 
 window.addEventListener('resize', function(e){
   if(window.outerWidth < 1100) resizeChart1.call(chartOne)
