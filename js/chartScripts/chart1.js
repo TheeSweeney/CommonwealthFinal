@@ -3,9 +3,9 @@
 var w;
 var h;
 var marginOne = {
-  top: 100,
+  top: 35,
   bottom: 75,
-  left: 40,
+  left: 30,
   right: 190
 };
 var width = w - marginOne.left - marginOne.right;
@@ -51,12 +51,6 @@ var index = 0;//used for positioning key chartOnepoints and labels
 var clicked = [];//used to hold actively clicked lines
 
 function plotChart1Axes(params){//TODO duplicated in ex4
-  
-  svgOne.insert('text')//Title
-    .attr('x', 20)
-    .attr('y', 40)
-    .attr('id', 'chartOneTitle')
-    .html("Health Care Spending as a Percentage of GDP, 1980-2014")
   
   d3.select('.display1')//Note  TODO must be more efficient way to add multiline notes
     .append('text')
@@ -325,7 +319,7 @@ function plotChart1LineAndPoints(params){
 }
 
 function resizeChart1(){
-  w = window.outerWidth - 50;
+  w = window.outerWidth > 1100 ? 610 : window.outerWidth * .55;
   h = .617647 * w - 50;
 
   width = w - marginOne.left - marginOne.right;
