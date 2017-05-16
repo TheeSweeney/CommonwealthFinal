@@ -169,6 +169,7 @@
 #container3 #note{
   fill: black;
   stroke: none;
+  font-size: 12px;
 }
 
 #container3 .alignLeft {

@@ -16,10 +16,10 @@ if(window.outerWidth > 914){
 }
 
 var margin = {
-  top: 58,
+  top: 0,
   bottom: 100,
-  left: 80,
-  right: 40
+  left: 15,
+  right: 30
 };
 var categories = [1,2,3,4,5]
 var width = w - margin.left - margin.right;
@@ -181,23 +181,7 @@ function drawAxesAndLabels(params){
   }
 
   if(params.initialize){
-    svg.insert('text')
-      .attr('y', 40)
-      .classed('chartTitle', true)
-      .html(params.title)
-
-    yAxesAndLabels.call(this)
-    
-  }
-
-  if(!params.initialize){
-    d3.select('.chartTitle')
-      .remove()
-    
-    svg.insert('text')
-      .attr('y', 40)
-      .classed('chartTitle', true)
-      .html(params.title)
+    yAxesAndLabels.call(this) 
   }
 
   //calc average
@@ -390,8 +374,15 @@ function plot(params){
 }
 
 function resizeChart3(params){
-  w = window.outerWidth - 50;
-  h = .5625 * w;
+ if(window.outerWidth > 914){
+    fullWidth = false
+    w = window.outerWidth > 1100 ? 600 : window.outerWidth * .53;
+    h = .617647 * w - 50;
+  }else{
+    window.outerWidth > 600 ? (fullWidth = true) : (fullWidth = false);
+    w = window.outerWidth - 30
+    h = .5 * w
+  }
 
   height = params.height = h - margin.top - margin.bottom;
   width = params.width = w - margin.left - margin.right;
