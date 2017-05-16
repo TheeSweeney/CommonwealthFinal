@@ -21,7 +21,6 @@
 #container1 .chartOnetrendline{
 	fill: none;
 	stroke: #ccc;
-	stroke-width: 2px;
 }
 
 #container1 .gridline line{

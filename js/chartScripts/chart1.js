@@ -1,5 +1,6 @@
 
 
+var fullWidth;
 var w;
 var h;
 var marginOne = {
@@ -159,7 +160,7 @@ function infoHover(d, country){
       .enter()
         .append('rect')
         .attr('x', function(d){
-          return d.year < 1987 ? xOne(1987) - 60 : xOne(d.year) - 60;
+          return (d.year < 1987 && !fullWidth) ? xOne(1987) - 60 : xOne(d.year) - 60;
         })
         .attr('y', function(d){
           return y(d.value) - 40;
@@ -176,7 +177,7 @@ function infoHover(d, country){
       .enter()
         .append('text')
         .attr('x', function(d){
-          return d.year < 1987 ? xOne(1987) - 58 : xOne(d.year) - 58;
+          return (d.year < 1987 && !fullWidth) ? xOne(1987) - 58 : xOne(d.year) - 58;
         })
         .attr('y', function(d){
           return y(d.value) - 20;
@@ -192,7 +193,7 @@ function infoHover(d, country){
       .enter()
         .append('text')
         .attr('x', function(d){
-          return d.year < 1987 ? xOne(1987) - 30 : xOne(d.year) - 30;
+          return (d.year < 1987 && !fullWidth) ? xOne(1987) - 30 : xOne(d.year) - 30;
         })
         .attr('y', function(d){
           return y(d.value) - 20;
@@ -290,6 +291,9 @@ function plotChart1LineAndPoints(params){
       .on('mouseout', function(d, i){
         mouseOutFade(clicked);
       })
+      .style('stroke-width', function(){
+        return fullWidth ? '3px' : '2px'
+      })
 
 
   this.selectAll('.chartOnepoints' + countryName)
@@ -320,9 +324,11 @@ function plotChart1LineAndPoints(params){
 
 function resizeChart1(){
   if(window.outerWidth > 900){
+    fullWidth = false
     w = window.outerWidth > 1100 ? 600 : window.outerWidth * .53;
     h = .617647 * w - 50;
   }else{
+    fullWidth = true
     w = window.outerWidth - 30
     h = .5 * w
   }
