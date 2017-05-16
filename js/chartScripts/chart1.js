@@ -296,7 +296,7 @@ function plotChart1LineAndPoints(params){
     .data(params.data)
     .enter()
       .append('circle')
-      .attr('r', 4)
+      .attr('r', 2)
       .classed(countryName + 'chartOnepoints point', true)
   //update
   this.selectAll('.chartOnetrendline')

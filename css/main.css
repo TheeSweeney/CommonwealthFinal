@@ -62,7 +62,7 @@
 	font-size: 30px;
 }
 
-#container1 #UnitedStatesline, #container1 .UnitedStatesInfoBox{
+#container1 #UnitedStatesline, #container1 .UnitedStateschartOneInfoBox{
 	stroke: rgb(162,83,35);
 }
 #container1 #UnitedStateskey, #container1 #UnitedStateskeyText{
@@ -71,7 +71,7 @@
 #container1 .UnitedStatespoints{
 	fill: rgb(162,83,35);
 }
-#container1 #Franceline, #container1 .FranceInfoBox{
+#container1 #Franceline, #container1 .FrancechartOneInfoBox{
 	stroke:rgb(57,123,122);
 }
 #container1 #Francekey, #container1 #FrancekeyText{
@@ -80,7 +80,7 @@
 #container1 .Francepoints{
 	fill: rgb(57,123,122);	
 }
-#container1 #Sweden1line, #container1 #Sweden2line, #container1 .Sweden2InfoBox, #container1 .Sweden1InfoBox{
+#container1 #Sweden1line, #container1 #Sweden2line, #container1 .Sweden2chartOneInfoBox, #container1 .Sweden1chartOneInfoBox{
 	stroke:rgb(88,191,191);
 }
 #container1 #Sweden1key, #container1 #Sweden1keyText{
@@ -89,7 +89,7 @@
 #container1 .Sweden1points, #container1 .Sweden2points{
 	fill: rgb(88,191,191);	
 }
-#container1 #Switzerlandline, #container1 .SwitzerlandInfoBox{
+#container1 #Switzerlandline, #container1 .SwitzerlandchartOneInfoBox{
 	stroke:rgb(243,130,61);
 }
 #container1 #Switzerlandkey, #container1 #SwitzerlandkeyText{
@@ -98,7 +98,7 @@
 #container1 .Switzerlandpoints{
 	fill: rgb(243,130,61);	
 }
-#container1 #Germany1line, #Germany2line, #container1 .Germany2InfoBox, #container1 .Germany1InfoBox{
+#container1 #Germany1line, #Germany2line, #container1 .Germany2chartOneInfoBox, #container1 .Germany1chartOneInfoBox{
 	stroke:rgb(23,85,132);
 }
 #container1 #Germany1key, #container1 #Germany1keyText{
@@ -107,7 +107,7 @@
 #container1 .Germany1points, .Germany2points{
 	fill: rgb(23,85,132);	
 }
-#container1 #Netherlandsline, #container1 .NetherlandsInfoBox{
+#container1 #Netherlandsline, #container1 .NetherlandschartOneInfoBox{
 	stroke:rgb(180,138,56);
 }
 #container1 #Netherlandskey, #container1 #NetherlandskeyText{
@@ -116,7 +116,7 @@
 #container1 .Netherlandspoints{
 	fill: rgb(180,138,56);	
 }
-#container1 #Canadaline, #container1 .CanadaInfoBox{
+#container1 #Canadaline, #container1 .CanadachartOneInfoBox{
 	stroke:rgb(230,198,132);
 }
 #container1 #Canadakey, #container1 #CanadakeyText{
@@ -125,7 +125,7 @@
 #container1 .Canadapoints{
 	fill: rgb(230,198,132);	
 }
-#container1 #UnitedKingdomline, #container1 .UnitedKingdomInfoBox{
+#container1 #UnitedKingdomline, #container1 .UnitedKingdomchartOneInfoBox{
 	stroke:rgb(18,57,85);
 }
 #container1 #UnitedKingdomkey, #container1 #UnitedKingdomkeyText{
@@ -134,7 +134,7 @@
 #container1 .UnitedKingdompoints{
 	fill: rgb(18,57,85);	
 }
-#container1 #NewZealandline, #container1 .NewZealandInfoBox{
+#container1 #NewZealandline, #container1 .NewZealandchartOneInfoBox{
 	stroke:rgb(31,127,201);
 }
 #container1 #NewZealandkey, #container1 #NewZealandkeyText{
@@ -143,7 +143,7 @@
 #container1 .NewZealandpoints{
 	fill: rgb(31,127,201);	
 }
-#container1 #Norwayline, #container1 .NorwayInfoBox{
+#container1 #Norwayline, #container1 .NorwaychartOneInfoBox{
 	stroke:rgb(79,116,63);
 }
 #container1 #Norwaykey, #container1 #NorwaykeyText{
@@ -152,7 +152,7 @@
 #container1 .Norwaypoints{
 	fill: rgb(79,116,63);	
 }
-#container1 #Australialine, #container1 .AustraliaInfoBox{
+#container1 #Australialine, #container1 .AustraliachartOneInfoBox{
 	stroke:rgb(148,196,128);
 }
 #container1 #Australiakey, #container1 #AustraliakeyText{
