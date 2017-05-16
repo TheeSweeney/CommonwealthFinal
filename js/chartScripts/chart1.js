@@ -327,12 +327,15 @@ function plotChart1LineAndPoints(params){
 }
 
 function resizeChart1(){
-  if(window.outerWidth > 900){
+
+  removeInfoBox.call(chartOne);
+
+  if(window.outerWidth > 914){
     fullWidth = false
     w = window.outerWidth > 1100 ? 600 : window.outerWidth * .53;
     h = .617647 * w - 50;
   }else{
-    fullWidth = true
+    window.outerWidth > 600 ? (fullWidth = true) : (fullWidth = false);
     w = window.outerWidth - 30
     h = .5 * w
   }
