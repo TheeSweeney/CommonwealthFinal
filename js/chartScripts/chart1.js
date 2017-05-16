@@ -154,13 +154,15 @@ function infoHover(d, country){
 
   if(clicked.length === 0 ||  clicked.includes(country)){
     removeInfoBox.call(this)
+
+    var minYearX = fullWidth ? 1983 : 1987;
   
     this.selectAll('#infoBubble')
       .data([d])
       .enter()
         .append('rect')
         .attr('x', function(d){
-          return (d.year < 1987 && !fullWidth) ? xOne(1987) - 60 : xOne(d.year) - 60;
+          return d.year < minYearX ? xOne(minYearX) - 60 : xOne(d.year) - 60;
         })
         .attr('y', function(d){
           return y(d.value) - 40;
@@ -177,7 +179,7 @@ function infoHover(d, country){
       .enter()
         .append('text')
         .attr('x', function(d){
-          return (d.year < 1987 && !fullWidth) ? xOne(1987) - 58 : xOne(d.year) - 58;
+          return d.year < minYearX ? xOne(minYearX) - 58 : xOne(d.year) - 58;
         })
         .attr('y', function(d){
           return y(d.value) - 20;
@@ -193,7 +195,7 @@ function infoHover(d, country){
       .enter()
         .append('text')
         .attr('x', function(d){
-          return (d.year < 1987 && !fullWidth) ? xOne(1987) - 30 : xOne(d.year) - 30;
+          return d.year < minYearX ? xOne(minYearX) - 30 : xOne(d.year) - 30;
         })
         .attr('y', function(d){
           return y(d.value) - 20;
@@ -300,7 +302,9 @@ function plotChart1LineAndPoints(params){
     .data(params.data)
     .enter()
       .append('circle')
-      .attr('r', 2)
+      .attr('r', function(){
+        return fullWidth ? 3 : 2;
+      })
       .classed(countryName + 'chartOnepoints point', true)
   //update
   this.selectAll('.chartOnetrendline')
