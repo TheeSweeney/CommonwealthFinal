@@ -4,9 +4,9 @@ var w;
 var h;
 var marginOne = {
   top: 35,
-  bottom: 75,
+  bottom: 55,
   left: 30,
-  right: 190
+  right: 170
 };
 var width = w - marginOne.left - marginOne.right;
 var height = h - marginOne.top - marginOne.bottom;
@@ -65,14 +65,14 @@ function plotChart1Axes(params){//TODO duplicated in ex4
     .attr('x', -30)
     .attr('y', height + 80)
     .classed('alignLeft', true)
-    .html('Source: OECD Health Data 2016. Note: Australia, Germany, Japan, Netherlands and Switzerland data is for current spending only, and excludes spending on capital formation of health care')
+    .html('Source: OECD Health Data 2016. Note: Australia, Germany, Japan, Netherlands and Switzerland data is for current ')
   d3.select('.display1')//Note
     .append('text')
     .classed('chartOnenote', true)
     .attr('x', -30)
     .attr('y', height + 90)
     .classed('alignLeft', true)
-    .html('providers.')
+    .html('spending only, and excludes spending on capital formation of health care providers.')
 
   this.append('g')
       .classed('gridline y', true)
@@ -319,7 +319,7 @@ function plotChart1LineAndPoints(params){
 }
 
 function resizeChart1(){
-  w = window.outerWidth > 1100 ? 610 : window.outerWidth * .55;
+  w = window.outerWidth > 1100 ? 600 : window.outerWidth * .53;
   h = .617647 * w - 50;
 
   width = w - marginOne.left - marginOne.right;
@@ -403,6 +403,6 @@ resizeChart1.call(chartOne, {
 
 
 window.addEventListener('resize', function(e){
-  resizeChart1.call(chartOne)
+  if(window.outerWidth < 1100) resizeChart1.call(chartOne)
 })                  
 
