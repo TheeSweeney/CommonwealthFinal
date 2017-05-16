@@ -36,11 +36,6 @@
 	shape-rendering: crispEdges;
 }
 
-#container1 .chart4keyText{
-	cursor: default;
-	font-size: 12px;
-}
-
 #container1 .infoBubbleData{
 	fill: black;
 }
@@ -249,18 +244,27 @@
 
 #container4 .btn {
 	margin: 0 5px 0 5px;
-	background-color: white;
 	border-width: 1px;
 	border-color: #808080;
+	padding: 2px 6px 3px 6px;
+  font-size: 13px;
+  font-weight: normal;
 }
 #container4 text {
 	fill: #808080;
 	font-weight: 300;
 }
 
-#container4 .note {
+#chart4Note {
 	font-size: 10px;
 	fill: black;
+	line-height: 1;
+	padding-top: 3px;
+}
+
+#chart4Holder{
+	bottom: auto !important;
+	top: 0px !important;
 }
 
 #container4 .infoNumber{
