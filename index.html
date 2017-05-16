@@ -14,6 +14,11 @@
         <meta property="og:title" content="Mirror, Mirror on the Wall: How the U.S. Health Care System Compares Internationally" />
         <meta property="og:description" content="Mirror, Mirror on the Wall: How the U.S. Health Care System Compares Internationally" />
         <script  type="text/javascript" src="./js/d3.min.js"></script>
+        <script
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+        crossorigin="anonymous"></script>
+
 
     </head>
     <body class="cloak">
@@ -203,7 +208,14 @@
                     <div class="viz-section__viz-holder">
                         <div class="viz-label">Health System Performance Score in Eleven Countries</div>
                         <div class="viz">
-                            
+                            <div class="js-viz-slope-chart">
+                                <div id='container3'>
+                                    <div>
+                                        <script src="./data/chart3data.js"></script>
+                                        <script src="./js/chartScripts/chart3.js"></script>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     

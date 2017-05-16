@@ -1,10 +1,20 @@
-//BIG TODO - node.js refactor
 $(document).ready(function(){
 
 var currentDataSet = dataSet.dataOverall.data;
 var currentTitle = dataSet.dataOverall.title
-var w = window.outerWidth - 50;
-var h = .5625 * w;
+var w;
+var h;
+
+if(window.outerWidth > 914){
+  fullWidth = false
+  w = window.outerWidth > 1100 ? 600 : window.outerWidth * .53;
+  h = .617647 * w - 50;
+}else{
+  window.outerWidth > 600 ? (fullWidth = true) : (fullWidth = false);
+  w = window.outerWidth - 30
+  h = .5 * w
+}
+
 var margin = {
   top: 58,
   bottom: 100,
