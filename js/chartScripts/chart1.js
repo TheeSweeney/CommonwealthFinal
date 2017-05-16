@@ -225,7 +225,7 @@ function plotChart1Key(params){
           .attr('width', 12)
           .on('mouseover', function(d, i){
             mouseOverFade.call(this, params);
-            removeInfoBox.call(chart);
+            removeInfoBox.call(chartOne);
           })
           .on('mouseout', function(d, i){
             mouseOutFade(d);
@@ -250,7 +250,7 @@ function plotChart1Key(params){
             return params.country
           })
           .on('mouseover', function(d, i){
-            removeInfoBox.call(chart);
+            removeInfoBox.call(chartOne);
             mouseOverFade.call(this, params);
           })
           .on('mouseout', function(d, i){
@@ -334,7 +334,7 @@ function resizeChart1(){
   xAxis = d3.svg.axis()
                 .scale(xOne)
                 .orient('bottom')
-                .ticks(12)
+                .ticks(w > 400 ? 12 : 5)
                 .tickSize(0)
                 .tickFormat(function(d){
                   return d.toString()
@@ -374,6 +374,11 @@ function resizeChart1(){
       y: yAxis,
       gridlines: yGridlines
     }
+  })
+
+  d3.selectAll('.x.axis .tick')[0].forEach(function(tick){
+    var currentTranslate = d3.select(tick).attr('transform')
+    d3.select(tick).attr('transform', currentTranslate + 'rotate(45)')
   })
 
   for( var Country in data){
