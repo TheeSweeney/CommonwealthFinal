@@ -7,7 +7,7 @@ var marginOne = {
   top: 35,
   bottom: 55,
   left: 30,
-  right: 170
+  right: 120
 };
 var width = w - marginOne.left - marginOne.right;
 var height = h - marginOne.top - marginOne.bottom;
@@ -222,8 +222,8 @@ function plotChart1Key(params){
           .append('rect')
           .classed('key', true)
           .attr('id', countryName + 'key')
-          .attr('y', index*12)
-          .attr('x', width + 50)
+          .attr('y', index * 14)
+          .attr('x', width + 20)
           .attr('height', 2)
           .attr('width', 12)
           .on('mouseover', function(d, i){
@@ -244,8 +244,8 @@ function plotChart1Key(params){
           .append('text')
           .classed('keyText', true)
           .attr('id', countryName + 'keyText')
-          .attr('y', (index*12) + 5)
-          .attr('x', width + 70)
+          .attr('y', (index * 14) + 5)
+          .attr('x', width + 40)
           .text(function(){
             if(params.country.includes('1')){
               return params.country.replace('1','')

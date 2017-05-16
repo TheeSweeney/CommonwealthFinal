@@ -6,6 +6,7 @@
 #container1 text {
 	fill: #ccc;
 	font-size: 11px;
+	cursor: default;
 }
 
 #container1 .axis path, .axis line{

@@ -1,6 +1,6 @@
 
-var w = window.outerWidth - 50;
-var h = w * .625 - 50;
+var w;
+var h;
 var marginFour = {
   top: 108,
   bottom: 100,
@@ -333,8 +333,15 @@ function plot(data) {
 }
 
 function resize4(params){
-  w = window.outerWidth - 50;
-  h = w * .625 - 50;
+  if(window.outerWidth > 914){
+    fullWidth = false
+    w = window.outerWidth > 1100 ? 600 : window.outerWidth * .53;
+    h = .617647 * w - 50;
+  }else{
+    window.outerWidth > 600 ? (fullWidth = true) : (fullWidth = false);
+    w = window.outerWidth - 30
+    h = .5 * w
+  }
 
   width = w - marginFour.left - marginFour.right;
   height = h - marginFour.top - marginFour.bottom;
