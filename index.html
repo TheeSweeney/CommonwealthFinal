@@ -7,10 +7,13 @@
         <meta name="citation_doi" content="" />
         <link rel="icon" href="img/favicon.ico">
         <link rel="stylesheet" href="css/index-generated.css">
+        <link rel="stylesheet" href="./css/main.css">
+
 
         <meta property="og:url" content="http://www.commonwealthfund.org/interactives/2017/june/mirror-mirro/" />
         <meta property="og:title" content="Mirror, Mirror on the Wall: How the U.S. Health Care System Compares Internationally" />
         <meta property="og:description" content="Mirror, Mirror on the Wall: How the U.S. Health Care System Compares Internationally" />
+        <script  type="text/javascript" src="./js/d3.min.js"></script>
 
     </head>
     <body class="cloak">
@@ -120,7 +123,14 @@
 
                     <div class="viz-section__viz-holder">
                         <div class="viz-label">Health Care Spending as a Percentage of GDP, 1980-2014</div>
-                        <!-- <div class="js-viz-slope-chart"></div> -->
+                        <div class="js-viz-slope-chart">
+                            <div id='container1'>
+                                <div>
+                                    <script src="./data/chart1data.js"></script>
+                                    <script src="./js/chartScripts/chart1.js"></script>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <p>The United States spends far more on health care than other high-income countries, with spending levels that rose continuously over the past three decades (Exhibit 1). Yet the U.S. has poorer health outcomes, including life expectancy, than other countries.1 Mortality rates, after improving for several decades, worsened in recent years, aggravated by the opioid crisis.2 In addition, as the baby boom population ages, more people in the U.S.—and all over the world—are living with age-related disabilities and chronic disease, placing pressure on health care systems to respond.</p>
