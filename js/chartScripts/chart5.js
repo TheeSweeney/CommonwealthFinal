@@ -1,10 +1,21 @@
-var w = window.outerWidth - 50;
-var h = w * .625 - 50;
+var w;
+var h;
+
+if(window.outerWidth > 914){
+  fullWidth = false
+  w = window.outerWidth > 1100 ? 600 : window.outerWidth * .53;
+  h = .617647 * w - 50;
+}else{
+  window.outerWidth > 600 ? (fullWidth = true) : (fullWidth = false);
+  w = window.outerWidth - 30
+  h = .5 * w
+}
+
 var marginFive = {
-  top: 98,
+  top: 15,
   bottom: 60,
-  left: 140,
-  right: 40
+  left: 100,
+  right: 45
 };
 var width = w - marginFive.left - marginFive.right;
 var height = h - marginFive.top - marginFive.bottom;
@@ -93,55 +104,55 @@ function yAxesAndLabelsFive(params, height, width) {//TODO factor out to prevent
 
     this.select('.y.axis')// yAxisFive Top Label
         .append('text')
-        .style('font-size', '16px')
+        .classed('axisText', true)
         .style('fill', '#4ABDBC')
-        .attr('x', -70)
+        .attr('x', -58)
         .attr('y',10)
         .text('Higher')
 
     this.select('.y.axis')
         .append('text')
-        .style('font-size', '16px')
+        .classed('axisText', true)
         .style('fill', '#4ABDBC')
-        .attr('x', -122)
+        .attr('x', -95)
         .attr('y',27)
         .text('health system')
 
     this.select('.y.axis')
         .append('text')
-        .style('font-size', '16px')
+        .classed('axisText', true)
         .style('fill', '#4ABDBC')
-        .attr('x', -112)
+        .attr('x', -90)
         .attr('y', 44)
         .text('performance')
 
      this.select('.y.axis')// yAxisFive Bottom Label
         .append('text')
-        .style('font-size', '16px')
+        .classed('axisText', true)
         .style('fill', '#044C7F')
-        .attr('x', -70)
+        .attr('x', -56)
         .attr('y', height - 20)
         .text('Lower')
 
     this.select('.y.axis')
         .append('text')
-        .style('font-size', '16px')
+        .classed('axisText', true)
         .style('fill', '#044C7F')
-        .attr('x', -125)
+        .attr('x', -95)
         .attr('y', height - 3)
         .text('health system')
 
     this.select('.y.axis')
         .append('text')
-        .style('font-size', '16px')
+        .classed('axisText', true)
         .style('fill', '#044C7F')
-        .attr('x', -115)
+        .attr('x', -90)
         .attr('y', height + 14)
         .text('performance')    
 
     this.select('.x.axis')// xAxisFive Left Label
         .append('text')
-        .style('font-size', '16px')//TODO factor out styling into CSS
+        .classed('axisText', true)
         .style('fill', '#4ABDBC')
         .attr('x', 0)
         .attr('y', 30)
@@ -150,7 +161,7 @@ function yAxesAndLabelsFive(params, height, width) {//TODO factor out to prevent
     this.select('.x.axis')// xAxisFive Right Label
         .append('text')
         .style('text-anchor', 'end')
-        .style('font-size', '16px')
+        .classed('axisText', true)
         .style('fill', '#044C7F')
         .attr('x', width)
         .attr('y', 30)
@@ -239,12 +250,6 @@ function yAxesAndLabelsFive(params, height, width) {//TODO factor out to prevent
       .exit()
       .remove()
 
-
-    svgFive.insert('text')
-      .attr('y', 40)
-      .attr('x', 10)
-      .attr('id', 'chartFiveTitle')
-      .html("In the U.S., Worse Health System Performance Despite High Spending")
 }
 
 function plotFive(params){
@@ -262,7 +267,9 @@ function plotFive(params){
         .classed('pointLabel', true)
   //update
   this.selectAll('.point')//data points
-      .attr('r', 4)
+      .attr('r', function(){
+        return fullWidth ? 4 : 3;
+      })
       .attr('cx', function(d){
         return xFive(d.x)
       })
@@ -274,7 +281,7 @@ function plotFive(params){
       })
   this.selectAll('.pointLabel')// country labels of data points
     .attr('x', function(d, i){
-      if(d.labelX === 'left') return xFive(d.x) - d.country.length*11;
+      if(d.labelX === 'left') return fullWidth ? (xFive(d.x) - d.country.length*11) : (xFive(d.x) - (d.country.length*11) + 3);
       if(d.labelX === 'right') return xFive(d.x) + 5; 
       if(d.labelX === 'center') return xFive(d.x) - 20;     
     })
@@ -286,6 +293,9 @@ function plotFive(params){
     .attr('fill', 'black')
     .text(function(d, i){
       return d.country
+    })
+    .style('font-size', function(){
+      return fullWidth ? '15px' : '13px'
     })
   //exit
   this.selectAll('.point')
@@ -299,8 +309,15 @@ function plotFive(params){
 }
 
 function resizeFive(params){
-  w = window.outerWidth - 50;
-  h = w * .625 - 50;
+  if(window.outerWidth > 914){
+    fullWidth = false
+    w = window.outerWidth > 1100 ? 600 : window.outerWidth * .53;
+    h = .617647 * w - 50;
+  }else{
+    window.outerWidth > 600 ? (fullWidth = true) : (fullWidth = false);
+    w = window.outerWidth - 30
+    h = .5 * w
+  }
 
   width = w - marginFive.left - marginFive.right;
   height = h - marginFive.top - marginFive.bottom;
@@ -337,9 +354,6 @@ function resizeFive(params){
       .remove();
   
   yAxesAndLabelsFive.call(chartFive, params, height, width)
-
-  d3.select('#chartFiveTitle')
-      .remove();
 
   plotFive.call(chartFive, params)
 

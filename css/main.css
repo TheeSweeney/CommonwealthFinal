@@ -291,3 +291,7 @@
   fill: #ccc;
   font-size: 18px;
 }
+
+#container5 .axisText {
+	font-size: 13px;
+}
