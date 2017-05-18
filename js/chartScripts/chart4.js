@@ -33,7 +33,8 @@ var xAxis = d3.svg.axis(x)
               })
               .tickSize(0)
 
-var yAxis = d3.svg.axis(y)
+var yAxis = d3.svg.axis()
+              .scale(y)
               .orient('left')
               .tickSize(5)
 var sort2014_btn = controls.append('button')
@@ -305,13 +306,14 @@ function resize4(params){
         .domain([0, 160])
         .range([heightFour, 0])
   xAxis = d3.svg.axis(x)
-                .orient('bottom')
+            .orient('bottom')
             .tickFormat(function(d){
               return
             })
             .tickSize(0)
 
-  yAxis = d3.svg.axis(y)
+  yAxis = d3.svg.axis()
+            .scale(y)
             .orient('left')
             .tickSize(0)
   
