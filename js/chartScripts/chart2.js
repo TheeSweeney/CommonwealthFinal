@@ -1,7 +1,8 @@
 $( document ).ready(function(){
+var tableWidth = window.outerWidth > 1100 ? 1100 : window.outerWidth - 20;
 
 
-var w = 40;
+var w = 432;
 var h = 250;
 var margin = {
   top: 20,
@@ -19,6 +20,7 @@ var createTable = function(params){
     d3.select("#container2")
         .append("table")
         .style("border-collapse", "collapse")
+        .style('width', tableWidth + "px")
         .selectAll("tr")
         .data(params.data)
         .enter()
@@ -75,10 +77,10 @@ createTable({
 })
 
 var initial = true;
-var svg;
-var chart;
-var x;
-var y;
+var svgTwo;
+var chartTwo;
+var xTwo;
+var yTwo;
 var activeQuestion;
 
 
@@ -86,15 +88,15 @@ function createChart(dataSet){
 
   // d3.select("#chart").remove();
   if(initial){
-    svg = d3.select(".activeRow").append("svg")
-          .attr("id", "chart")
+    svgTwo = d3.select(".activeRow").append("svg")
+          .attr("id", "chartTwo")
           .attr("width", w)
           .attr("height", h);
-    chart = svg.append("g")
+    chartTwo = svgTwo.append("g")
           .classed("display", true)
           .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    svg.insert('text')//Title
+    svgTwo.insert('text')//Title
         .attr('x', 35)
         .attr('y', h/2)
         .attr('id', 'directions')
@@ -212,7 +214,7 @@ function createChart(dataSet){
         })
   }
 
-  plot.call(chart,{
+  plot.call(chartTwo,{
     data: dataSet,
     axes: {
       x: x,
@@ -316,7 +318,7 @@ function createSubsections(rowId){
   d3.select('.selectedQuestion').remove();
   questionSets = [];
 
-  d3.select('#chart').remove();
+  d3.select('#chartTwo').remove();
   d3.selectAll('.subsectionBar').remove();
   initial = true;
 
