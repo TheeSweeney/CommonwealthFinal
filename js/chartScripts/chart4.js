@@ -1,19 +1,19 @@
 
-var w;
-var h;
+var wFour;
+var hFour;
 var marginFour = {
   top: 50,
   bottom: 0,
   left: 40,
   right: 40
 };
-var width = w - marginFour.left - marginFour.right;
-var height = h - marginFour.top - marginFour.bottom;
+var widthFour = wFour - marginFour.left - marginFour.right;
+var heightFour = hFour - marginFour.top - marginFour.bottom;
 
 var svgFourg = d3.select('#container4').append('svg')
             .classed('chart', true)
-            .attr('width', w)
-            .attr('height', h)
+            .attr('width', wFour)
+            .attr('height', hFour)
 var chart = svgFourg.append('g')
               .classed('displayFour', true)
               .attr('transform','translate(' + marginFour.right  + ',' + marginFour.top + ')')
@@ -22,10 +22,10 @@ var controls = d3.select('#container4')
                 .attr('id', 'controls');
 var x = d3.scale.linear()
           .domain([-.5, chart4data['2014Ascending'].length-.5])
-          .range([0, width])
+          .range([0, widthFour])
 var y = d3.scale.linear()
           .domain([0, 160])
-          .range([height, 0])
+          .range([heightFour, 0])
 var xAxis = d3.svg.axis(x)
               .orient('bottom')
               .tickFormat(function(d){
@@ -125,7 +125,7 @@ function plotLines(params){
       })
       .attr('width', 1)
       .attr('height', function(d,i){
-        return height - y(d[params.year])
+        return heightFour - y(d[params.year])
       })
   //exit
   this.selectAll('.bar')
@@ -230,7 +230,7 @@ function plotPoints(params){
       .attr('x', function(d){
         return x(d.rank - 1) - (d.country.length * 2.5)
       })
-      .attr('y', height + 15)
+      .attr('y', heightFour + 15)
       .attr('fill', 'black')
       .text(function(d, i){
         return d.country
@@ -287,23 +287,23 @@ function plot(data) {
 function resize4(params){
   if(window.outerWidth > 914){
     fullWidth = false
-    w = window.outerWidth > 1100 ? 600 : window.outerWidth * .53;
-    h = .617647 * w - 50;
+    wFour = window.outerWidth > 1100 ? 600 : window.outerWidth * .53;
+    hFour = .617647 * wFour - 50;
   }else{
     window.outerWidth > 600 ? (fullWidth = true) : (fullWidth = false);
-    w = window.outerWidth - 30
-    h = .5 * w
+    wFour = window.outerWidth - 30
+    hFour = .5 * wFour 
   }
 
-  width = w - marginFour.left - marginFour.right;
-  height = h - marginFour.top - marginFour.bottom;
+  widthFour = wFour - marginFour.left - marginFour.right;
+  heightFour = hFour - marginFour.top - marginFour.bottom;
 
   x = d3.scale.linear()
         .domain([-.5, chart4data['2014Ascending'].length-.5])
-        .range([0, width])
+        .range([0, widthFour])
   y = d3.scale.linear()
         .domain([0, 160])
-        .range([height, 0])
+        .range([heightFour, 0])
   xAxis = d3.svg.axis(x)
                 .orient('bottom')
             .tickFormat(function(d){
@@ -316,8 +316,8 @@ function resize4(params){
             .tickSize(0)
   
   d3.select(this.node().parentNode)//resize SVG element
-        .attr('height', h + 50)
-        .attr('width', w)
+        .attr('height', hFour + 50)
+        .attr('width', wFour)
 
   this.selectAll('g')//remove axes
       .remove();
