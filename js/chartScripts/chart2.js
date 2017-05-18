@@ -69,7 +69,9 @@ var createTable = function(params){
       .attr('id', function(d){
         if(d !== 'header' && d !=="OVERALL RANKING") return d.split(' ').join('') + "PlusMinus"
       })
-      .classed('plusMinus', true)
+      .classed('plusMinus', function(d){
+        return (d !== 'header' && d !=="OVERALL RANKING")
+      })
         
     $('#container2').find("tr:odd").addClass("odd");
     $('#container2').find("tr:not(.odd)").hide();
@@ -386,6 +388,9 @@ function openSubsection(data){
   d3.selectAll('.questionSet')
       .remove();
 
+  d3.selectAll('.plusMinus')
+    .html('+')
+
   d3.select('#' + currentRow.slice(0, -3) + 'PlusMinus')
     .html('-')
 
@@ -400,9 +405,6 @@ function openSubsection(data){
   $('#' + rowId).next("tr").toggle();
   
   if(alreadyActive){
-    d3.select('#' + currentRow.slice(0, -3) + 'PlusMinus')
-      .html('+')
-
     $('#' + rowId).next('tr').toggle();
     d3.select('.activeRow').classed('activeRow', false)
 
