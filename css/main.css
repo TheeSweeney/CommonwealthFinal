@@ -160,6 +160,10 @@
 
 /*Chart2*/
 
+#viz-chartTwo {
+	padding: 370px 0 0 0;
+}
+
 #container2 table {
 	width: 945px;
 }

@@ -1,7 +1,7 @@
 $( document ).ready(function(){
 
 
-var w = 432;
+var w = 40;
 var h = 250;
 var margin = {
   top: 20,
