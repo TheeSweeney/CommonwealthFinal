@@ -37,7 +37,9 @@ var createTable = function(params){
            
             
      .selectAll("td")
-        .data(function(d){return d;})
+        .data(function(d){
+          return d;
+        })
         .enter().append("td")
         .style("padding", "10px")
         .style('display', function(d){
@@ -54,14 +56,20 @@ var createTable = function(params){
         })
         .attr('id', function(d){
           if(d.length > 2) currentRow = d; //set current row name 
-          if(d === '+') return currentRow.split(' ').join('') + "PlusMinus"
         })
         .classed('leftAlign', function(d){
           if(d.length > 4) return true;
         })
-        .classed('plusMinus', function(d){
-          if(d === '+') return true;
-        })
+
+    d3.selectAll('.leftAlign')
+      .append('text')
+      .html(function(d){
+        if(d !== 'header' && d !=="OVERALL RANKING") return '+'
+      })
+      .attr('id', function(d){
+        if(d !== 'header' && d !=="OVERALL RANKING") return d.split(' ').join('') + "PlusMinus"
+      })
+      .classed('plusMinus', true)
         
     $('#container2').find("tr:odd").addClass("odd");
     $('#container2').find("tr:not(.odd)").hide();

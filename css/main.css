@@ -263,6 +263,9 @@
 #container2 .plusMinus{
 	font-size: 20px;
 	color: rgb(3,195,190);
+	position: relative;
+  top: 2px;
+  left: 10px;
 }
 
 /*Chart3*/
