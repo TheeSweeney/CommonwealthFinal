@@ -158,6 +158,111 @@
 	font-size: 10px;
 }
 
+/*Chart2*/
+
+#container2 table {
+	width: 945px;
+}
+
+#container2 td {
+	font-size: 16px;
+}
+#container2 .leftAlign {
+	text-align: left;
+}
+
+#container2 #d3TableContainer{
+	color: #808080;
+}
+
+#container2 #tableContainer{
+	min-width: 400px;
+	max-width: 1000px;
+	color: rgb(99,113,119);
+}
+
+#container2 #headerRow{
+	background-color: rgb(17,73,131);
+	color: white;
+}
+
+#container2 #headerRow th{
+	font-weight: 400;
+	text-align: center
+}
+
+#container2 #chart, #tableSVG{
+	border: 1px solid #CCC;
+	float: right;
+	background-color: white;
+	font-size: 12px;
+}
+
+#container2 .bar {
+	fill: rgb(238,123,59);
+}
+
+#container2 #blank0{
+	display: none;
+}
+
+#container2 .softBlue{
+	background-color: rgb(219,244,245);
+}
+
+#container2 .bookEnd{
+	font-weight: 600;
+	background-color: rgb(180,233,230);
+}
+
+
+#container2 .table>tbody>tr>td, .table>thead>tr>th {
+	border-top: none;
+	border-bottom: none;
+}
+
+#container2 .activeRow{
+	background-color: rgb(237,249,250);
+}
+
+#container2 .subsectionBar {
+	float: left;
+	clear: left;
+	color: rgb(255,96,0);
+	font-weight: 500;
+	font-size: 15px;
+  width: 49%;
+  text-align: left;
+}
+
+#container2 .questionSet{
+	background-color: white;
+	color: black;
+}
+
+#container2 .question:hover {
+	background-color: rgb(254,242,232);
+}
+
+#container2 .selectedQuestion {
+	color: rgb(238,123,59);
+	font-size: 15px;
+	float: left;
+	width: 50%;
+	position: relative;
+	top: 50px;
+}
+
+#container2 #directions{
+	font-size: 20px;
+	fill: #808080;
+}
+
+#container2 .plusMinus{
+	font-size: 20px;
+	color: rgb(3,195,190);
+}
+
 /*Chart3*/
 #container3 #controls{
   margin-bottom: 10px;
