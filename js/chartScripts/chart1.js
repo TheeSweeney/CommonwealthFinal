@@ -22,7 +22,7 @@ var chartOne = svgOne.append("g")
 var xOne = d3.scale.linear()
           .domain([1980, 2014])
           .range([0, width])
-var y = d3.scale.linear()
+var yOne = d3.scale.linear()
           .domain([0, 18])
           .range([height, 0])
 var xAxis = d3.svg.axis()
@@ -34,10 +34,10 @@ var xAxis = d3.svg.axis()
                 return d.toString()
               })
 var yAxis = d3.svg.axis()
-              .scale(y)
+              .scale(yOne)
               .orient('left')
 var yGridlines = d3.svg.axis()
-                  .scale(y)
+                  .scale(yOne)
                   .tickSize(-width, 0, 0)
                   .tickFormat('')
                   .orient('left')
@@ -46,7 +46,7 @@ var line = d3.svg.line()
               return xOne(d.year)
             })
             .y(function(d){
-              return y(d.value)
+              return yOne(d.value)
             })
 var index = 0;//used for positioning key chartOnepoints and labels
 var clicked = [];//used to hold actively clicked lines
@@ -165,7 +165,7 @@ function infoHover(d, country){
           return d.year < minYearX ? xOne(minYearX) - 60 : xOne(d.year) - 60;
         })
         .attr('y', function(d){
-          return y(d.value) - 40;
+          return yOne(d.value) - 40;
         })
         .attr('rx', 5)
         .attr('ry', 5)        
@@ -182,7 +182,7 @@ function infoHover(d, country){
           return d.year < minYearX ? xOne(minYearX) - 58 : xOne(d.year) - 58;
         })
         .attr('y', function(d){
-          return y(d.value) - 20;
+          return yOne(d.value) - 20;
         })  
         .attr('id', 'infoBubbleYear')
         .text(function(d){
@@ -198,7 +198,7 @@ function infoHover(d, country){
           return d.year < minYearX ? xOne(minYearX) - 30 : xOne(d.year) - 30;
         })
         .attr('y', function(d){
-          return y(d.value) - 20;
+          return yOne(d.value) - 20;
         })  
         .attr('id', 'infoBubbleGDP')
         .text(function(d){
@@ -317,7 +317,7 @@ function plotChart1LineAndPoints(params){
         return xOne(d.year)
       })
       .attr('cy', function(d){
-        return y(d.value)
+        return yOne(d.value)
       })
       .on('mouseover', function(d){
             params.country = d3.select(this)[0][0].classList[0].slice(0, d3.select(this)[0][0].classList[0].length - 6);
@@ -346,7 +346,7 @@ function resizeChart1(){
   xOne = d3.scale.linear()
               .domain([1980, 2014])
               .range([0, width])
-  y = d3.scale.linear()
+  yOne = d3.scale.linear()
               .domain([0, 18])
               .range([height, 0])
   xAxis = d3.svg.axis()
@@ -358,10 +358,10 @@ function resizeChart1(){
                   return d.toString()
                 })
   yAxis = d3.svg.axis()
-                .scale(y)
+                .scale(yOne)
                 .orient('left')
   yGridlines = d3.svg.axis()
-                    .scale(y)
+                    .scale(yOne)
                     .tickSize(-width, 0, 0)
                     .tickFormat('')
                     .orient('left')
