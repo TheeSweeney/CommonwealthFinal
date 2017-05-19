@@ -405,6 +405,9 @@ function openSubsection(data){
   $('#' + rowId).next("tr").toggle();
   
   if(alreadyActive){
+    d3.select('#' + currentRow.slice(0, -3) + 'PlusMinus')
+      .html('+')
+
     $('#' + rowId).next('tr').toggle();
     d3.select('.activeRow').classed('activeRow', false)
 
