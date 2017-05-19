@@ -1,6 +1,3 @@
-.chart{
-	border: 1px solid #CCC;
-}
 /*Chart 1*/
 
 #container1 text {
@@ -161,7 +158,7 @@
 /*Chart2*/
 
 #viz-chartTwo {
-	padding: 370px 0 0 0;
+	padding: 10px 0 0 0;
 }
 
 
