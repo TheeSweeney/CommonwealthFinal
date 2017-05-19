@@ -419,10 +419,10 @@ function openSubsection(data){
 
   var observer = new MutationObserver(function(mutations) {    
     if(mutations.length == 2){
-      d3.select('.selectedQuestion').style('z-index', '0')
+      d3.select('.selectedQuestion').style('z-index', '0').style('color', 'rgb(238,123,59)')
     } else {
       
-      d3.select('.selectedQuestion').style('z-index', '-1')
+      d3.select('.selectedQuestion').style('z-index', '-1').style('color', 'white')
     }
   });
 
