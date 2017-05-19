@@ -12,7 +12,6 @@ var margin = {
 };
 var width = w - margin.left - margin.right;
 var height = h - margin.top - margin.bottom;
-var activeSubsection;
 
 var createTable = function(params){
     var currentRow;
@@ -87,7 +86,17 @@ createTable({
 })
 
 var initial = true;
-var svgTwo, chartTwo, xTwo, yTwo, activeQuestion, activeRowId, currentRow, questionSets;
+var selectedSubsection, 
+activeSubsection,
+questionClicked, 
+svgTwo, 
+chartTwo, 
+xTwo, 
+yTwo, 
+activeQuestion, 
+activeRowId, 
+currentRow, 
+questionSets;
 var questionSet = [];
 
 
@@ -236,7 +245,6 @@ function createChart(dataSet){
 }
 
 
-var questionClicked;
 
 function questionClick(d, subsectionId){
 
@@ -264,8 +272,6 @@ function questionClick(d, subsectionId){
   createChart(d.data);
 }
 
-
-var selectedSubsection;
 function createQuestionSet(){
 
   var subsectionId = $(this).attr('id')
@@ -314,9 +320,6 @@ function createQuestionSet(){
           return ''
       })
   
-
-      console.log(selectedSubsection)
-     
   }else{
     d3.selectAll('.questionSet')
       .html('')
