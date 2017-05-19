@@ -87,13 +87,8 @@ createTable({
 })
 
 var initial = true;
-var svgTwo;
-var chartTwo;
-var xTwo;
-var yTwo;
-var activeQuestion;
-var activeRowId;
-var currentRow;
+var svgTwo, chartTwo, xTwo, yTwo, activeQuestion, activeRowId, currentRow, questionSets;
+var questionSet = [];
 
 
 function createChart(dataSet){
@@ -241,9 +236,11 @@ function createChart(dataSet){
 }
 
 
+var questionClicked;
 
+function questionClick(d, subsectionId){
 
-function questionClick(d){
+  questionClicked = true;
 
   d3.select('.selectedQuestion').remove()
 
@@ -267,20 +264,20 @@ function questionClick(d){
   createChart(d.data);
 }
 
-var questionSet = [];
 
+var selectedSubsection;
 function createQuestionSet(){
 
   var subsectionId = $(this).attr('id')
   var alreadyActive = false;
   var subSectionPassed = false;
 
-
-    d3.selectAll('.subsectionBar')
-      .style('height', '20px')
-    
+  d3.selectAll('.subsectionBar')
+    .style('height', '20px')
 
   if(subsectionId !== activeSubsection){
+
+    questionClicked = false;
 
     activeSubsection = subsectionId;
     
@@ -290,6 +287,7 @@ function createQuestionSet(){
         if (d3.select(this).attr('id') === activeSubsection) subSectionPassed = true
         return display;
       });
+
     $('#' + subsectionId).show();
     
     d3.select(this).style('height', '200px');
@@ -306,16 +304,18 @@ function createQuestionSet(){
         .style('height', '50px')
         .classed('question', true)
         .on('click', function(d){
-          questionClick.call(this, d)
+          questionClick.call(this, d, subsectionId)
+          if(questionClicked) selectedSubsection = subsectionId;
         })
-
     
     d3.selectAll('#' + this.id.slice(0, -2) + 'QuestionSet')
       .style('border-top', function(){
         if(d3.select(this).attr('id').slice(0,-11) === activeSubsection.slice(0,-2)) return '3px solid rgb(255,96,0)'
           return ''
       })
+  
 
+      console.log(selectedSubsection)
      
   }else{
     d3.selectAll('.questionSet')
@@ -324,9 +324,16 @@ function createQuestionSet(){
     d3.select(this).style('height', '20px');
     activeSubsection = '';
     $('.subsectionBar').show();
+    d3.selectAll('.subsectionBar')
+    .style('opacity', function(d,i){
+      return (d.questionSet.split(' ').join('') + 'Id') === selectedSubsection ? 1 : .3;
+    })
+    .classed('notActive', function(){
+      return ((d.questionSet.split(' ').join('') + 'Id') !== selectedSubsection)
+    })
   }
 }
-var questionSets;
+
 function createSubsections(rowId){
 
   d3.select('.selectedQuestion').remove();
@@ -339,7 +346,9 @@ function createSubsections(rowId){
   var activeSubset = subsectionData[rowId.slice(0, -3) + 'Questions'];
 
   createChart(subsectionData.emptyChart)
+
   var t = true
+
   d3.select('.activeRow').selectAll('.subsectionBar')
     .data(activeSubset)
     .enter()
@@ -382,8 +391,6 @@ function createSubsections(rowId){
 
 
 }
-
-
 
 function openSubsection(data){
   currentRow = $(this).attr('id');
@@ -432,9 +439,7 @@ function openSubsection(data){
   });
 
   var config = { attributes: true, childList: true, characterData: true };
-
   
-
 d3.selectAll('.odd')
     .on('click', function(){
       var id = d3.select(this).attr('id');
