@@ -96,7 +96,6 @@ var activeQuestion;
 
 function createChart(dataSet){
 
-  // d3.select("#chart").remove();
   if(initial){
     svgTwo = d3.select(".activeRow").append("svg")
           .attr("id", "chartTwo")
@@ -115,12 +114,12 @@ function createChart(dataSet){
 
   }
 
-  x = d3.scale.ordinal()
+  var x = d3.scale.ordinal()
             .domain(dataSet.map(function(entry){
               return entry.country;
             }))
             .rangeBands([0, width])
-  y = d3.scale.linear()
+  var y = d3.scale.linear()
             .domain([0, 100])
             .range([height, 0])
   
