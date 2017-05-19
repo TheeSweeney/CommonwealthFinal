@@ -92,6 +92,8 @@ var chartTwo;
 var xTwo;
 var yTwo;
 var activeQuestion;
+var activeRowId;
+var currentRow;
 
 
 function createChart(dataSet){
@@ -171,6 +173,10 @@ function createChart(dataSet){
           })
       this.selectAll('.percentage')
           .attr('x', function(d,i){
+            if(currentRow === "HealthCareOutcomesRow" && d.value%1 == 0){
+              return d.value < 10 ? x(d.country) + 12 : x(d.country) + 10
+            }
+
             if(d.value === 0 ){
               return x(d.country) + 2
             }else if(d.value < 10){
@@ -180,7 +186,6 @@ function createChart(dataSet){
             }
           })
           .attr('y', function(d,i){
-            
             if(d.value === 0 || d.value < 0 ){
               return y(0)
             }else if(d.value < 10){
@@ -188,9 +193,9 @@ function createChart(dataSet){
             }else{
               return (y(d.value) + 15)
             }
-            // return d.value < 10 ? y(d.value) : (y(d.value) + 15);
           })
           .text(function(d,i){
+            if(currentRow === "HealthCareOutcomesRow") return d.value
             return d.value === 0 ? 'Data' : (d.value + '%');
           })
           .attr('fill', function(d,i){
@@ -378,9 +383,10 @@ function createSubsections(rowId){
 
 }
 
-var activeRowId;
+
+
 function openSubsection(data){
-  var currentRow = $(this).attr('id');
+  currentRow = $(this).attr('id');
   var alreadyActive = false;
   var rowId = $(this).attr('id');
 
