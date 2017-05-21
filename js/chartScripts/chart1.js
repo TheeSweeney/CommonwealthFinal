@@ -151,8 +151,9 @@ function removeInfoBox(){
 }
 
 function infoHover(d, country){
+  console.log(country.slice(0,-8), clicked)
 
-  if(clicked.length === 0 ||  clicked.includes(country)){
+  if(clicked.length === 0 ||  clicked.includes(country.slice(0,-8))){
     removeInfoBox.call(this)
 
     var minYearX = fullWidth ? 1983 : 1987;
