@@ -100,7 +100,7 @@ questionSets;
 var questionSet = [];
 
 
-function createChart(dataSet){
+function createChart(dataSet, range){
 
   if(initial){
     svgTwo = d3.select(".activeRow").append("svg")
@@ -123,12 +123,16 @@ function createChart(dataSet){
               return entry.country;
             }))
             .rangeBands([0, width])
-  if(true){
-    var y = d3.scale.linear()
-              .domain([0, d3.max(dataSet, function(d){
-                return d.value
-              })])
-              .range([height, 0])
+
+  var y = d3.scale.linear()
+            .range([height, 0])
+  if(range){
+      y.domain(range)
+  }else{
+      y.domain([0, d3.max(dataSet, function(d){
+          return d.value
+        })
+      ])   
   }
 
   function plot(params){
@@ -171,7 +175,7 @@ function createChart(dataSet){
             return y(d.value);
           })
           .attr('height', function(d,i){
-            return d.value < 0 ? 0 : height - y(d.value)
+            return height - y(d.value)
           })
           .attr('width', function(d,i){
             return x.rangeBand() - 3;
@@ -256,8 +260,6 @@ function questionClick(d, subsectionId){
   var questionId = d.q.split(' ').join('') + 'Id'
   activeQuestion = questionId;
 
-  console.log(d)
-
   d3.select(".activeRow")
     .append('text')
     .attr('id', function(){
@@ -272,7 +274,7 @@ function questionClick(d, subsectionId){
       return (d.questionSet.split(' ').join('') + 'Id') === activeSubsection ? 1 : .3;
     })
 
-  createChart(d.data);
+  createChart(d.data, d.range);
 }
 
 function createQuestionSet(){
