@@ -116,8 +116,6 @@ function createChart(dataSet){
         .attr('y', h/2)
         .attr('id', 'directions')
         .html("Select a question or measure to see data")
-
-
   }
 
   var x = d3.scale.ordinal()
@@ -125,10 +123,13 @@ function createChart(dataSet){
               return entry.country;
             }))
             .rangeBands([0, width])
-  var y = d3.scale.linear()
-            .domain([0, 100])
-            .range([height, 0])
-  
+  if(true){
+    var y = d3.scale.linear()
+              .domain([0, d3.max(dataSet, function(d){
+                return d.value
+              })])
+              .range([height, 0])
+  }
 
   function plot(params){
     //enter
@@ -255,6 +256,8 @@ function questionClick(d, subsectionId){
   var questionId = d.q.split(' ').join('') + 'Id'
   activeQuestion = questionId;
 
+  console.log(d)
+
   d3.select(".activeRow")
     .append('text')
     .attr('id', function(){
@@ -331,7 +334,7 @@ function createQuestionSet(){
     .style('opacity', function(d,i){
       return (d.questionSet.split(' ').join('') + 'Id') === selectedSubsection ? 1 : .3;
     })
-    .classed('notActive', function(){
+    .classed('notActive', function(d){
       return ((d.questionSet.split(' ').join('') + 'Id') !== selectedSubsection)
     })
   }
