@@ -5,7 +5,7 @@ var tableWidth = window.outerWidth > 1100 ? 1100 : window.outerWidth - 20;
 var w = 432;
 var h = 250;
 var margin = {
-  top: 20,
+  top: 30,
   bottom: 25,
   left: 20,
   right: 20
@@ -100,7 +100,7 @@ questionSets;
 var questionSet = [];
 
 
-function createChart(dataSet, range){
+function createChart(dataSet, range, axisLabel){
 
   if(initial){
     svgTwo = d3.select(".activeRow").append("svg")
@@ -108,7 +108,7 @@ function createChart(dataSet, range){
           .attr("width", w)
           .attr("height", h);
     chartTwo = svgTwo.append("g")
-          .classed("display", true)
+          .attr('id', 'display')
           .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     svgTwo.insert('text')//Title
@@ -136,8 +136,8 @@ function createChart(dataSet, range){
   }
 
   function plot(params){
-    //enter
 
+    //enter
     this.selectAll('.bar')
           .data(params.data)
           .enter()
@@ -149,6 +149,11 @@ function createChart(dataSet, range){
             .append('text')
             .classed('barLabel', true)
     if(!initial){
+      d3.select('#display')//Top Label
+        .append('text')
+        .attr('x', 0)
+        .attr('y',-10)
+        .html(axisLabel)
 
       d3.select('#directions').remove();
 
@@ -274,7 +279,9 @@ function questionClick(d, subsectionId){
       return (d.questionSet.split(' ').join('') + 'Id') === activeSubsection ? 1 : .3;
     })
 
-  createChart(d.data, d.range);
+  if(!d.yAxisLabel) d.yAxisLabel = 'Percent'
+
+  createChart(d.data, d.range, d.yAxisLabel);
 }
 
 function createQuestionSet(){
