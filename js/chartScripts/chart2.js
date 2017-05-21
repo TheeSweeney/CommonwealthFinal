@@ -214,7 +214,6 @@ function createChart(dataSet, range, axisLabel){
             }
           })
           .text(function(d,i){
-            console.log(axisLabel.slice(0, 7))
             if(axisLabel.slice(0, 7) !== 'Percent') return d.value
             return d.value === 0 ? 'Data' : (d.value + '%');
           })
