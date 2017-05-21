@@ -38,12 +38,8 @@ var yAxis = d3.svg.axis()
               .orient('left')
               .tickSize(5)
 var sort2014_btn = controls.append('button')
-                      .html('Sort Low to High by 2014 rate')
+                      .html('Sort Best to Worst by 2014 rate')
                       .attr('id','sort2014btn')
-                      .classed('btn', true)
-var sortLeast_btn = controls.append('button')
-                      .html('Sort by least improved')
-                      .attr('id','sortleastbtn')
                       .classed('btn', true)
 var sortMost_btn = controls.append('button')
                       .html('Sort by most improved')
@@ -249,10 +245,6 @@ function plotPoints(params){
 
 sort2014_btn.on('click', function(){
   plot(chart4data['2014Ascending']);
-})
-
-sortLeast_btn.on('click', function(){
-  plot(chart4data['diffLeast']);
 })
 
 sortMost_btn.on('click', function(){

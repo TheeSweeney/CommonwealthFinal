@@ -2,6 +2,10 @@
  	cursor: default;
  }
 
+ .exhibit-label {
+ 	font-weight: normal;
+ }
+
 /*Chart 1*/
 
 #container1 text {
@@ -357,11 +361,17 @@
 #container4 .btn {
 	margin: 0 5px 0 5px;
 	border-width: 1px;
-	border-color: #808080;
 	padding: 2px 6px 3px 6px;
   font-size: 13px;
   font-weight: normal;
 }
+
+#container4 .selectedBtn {
+  box-shadow: 0 0px 0px rgba(82,168,236,.8) inset, 0 0 10px rgba(82,168,236,.8);
+  outline: 0 none;
+  font-weight: 700;
+}
+
 #container4 text {
 	fill: #808080;
 	font-weight: 300;
