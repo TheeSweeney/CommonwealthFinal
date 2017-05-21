@@ -355,7 +355,7 @@ function createSubsections(rowId){
 
   createChart(subsectionData.emptyChart)
 
-  var t = true
+  
 
   d3.select('.activeRow').selectAll('.subsectionBar')
     .data(activeSubset)
@@ -363,11 +363,10 @@ function createSubsections(rowId){
       .append('text')
       .html(function(d){
         questionSets.push(d.questionSet)
-        if(t) return d.questionSet;
+        return d.questionSet;
       })
       .attr('id', function(d){
         return (d.questionSet.split(' ').join('') + 'Id')
-        t = false;
       })
       .style('height', '20px')
       .style('width', '50%')

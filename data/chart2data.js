@@ -909,6 +909,7 @@ var subsectionData = {
       sectionData: [
         {
           'q': "Infant mortality, deaths per 1,000 live births",
+          range: [0,10],
             data: [
               {country: "AUS", value: 3.4},
               {country: "CAN", value: 4.8},
@@ -941,6 +942,7 @@ var subsectionData = {
         },
         {
           'q': "Life expectancy at age 60 in years",
+          range: [0,40],
             data: [
               {country: "AUS", value: 25.5},
               {country: "CAN", value: 25},
@@ -959,6 +961,43 @@ var subsectionData = {
     },
     {
       questionSet: 'Mortality amenable to health care',
+      sectionData: [
+        {
+          'q': "Mortality amenable to healthcare, deaths per 100,00",
+          data: [
+            {country: "AUS", value: 62},
+            {country: "CAN", value: 78},
+            {country: "FRA", value: 61},
+            {country: "GER", value: 83},
+            {country: "NETH", value: 72},
+            {country: "NZ", value: 87},
+            {country: "NOR", value: 64},
+            {country: "SWE", value: 69},
+            {country: "SWIZ", value: 55},
+            {country: "UK", value: 85},
+            {country: "US", value: 112}
+          ]
+        },
+        {
+          'q': "10-year decline in mortality amenable to health care",
+          data: [
+            {country: "AUS", value:29},
+            {country: "CAN", value:26},
+            {country: "FRA", value:28},
+            {country: "GER", value:28},
+            {country: "NETH", value:34},
+            {country: "NZ", value:32},
+            {country: "NOR", value:32},
+            {country: "SWE", value:26},
+            {country: "SWIZ", value:29},
+            {country: "UK", value:37},
+            {country: "US", value:16}
+          ]
+        },               
+      ]
+    },
+    {
+      questionSet: 'Disease-specific health outcomes',
       sectionData: [
         {
           'q': "30 day in-hospital mortality rate following acute myocardial infarction, deaths per 100 patients",
@@ -990,6 +1029,38 @@ var subsectionData = {
             {country: "SWIZ", value: 6.9},
             {country: "UK", value: 9.2},
             {country: "US", value: 3.6}
+          ]
+        },
+        {
+          'q': "Breast cancer five-year relative survival rate",
+          data: [
+            {country: "AUS", value:88},
+            {country: "CAN", value:88},
+            {country: "FRA", value:0},
+            {country: "GER", value:86},
+            {country: "NETH", value:85},
+            {country: "NZ", value:86},
+            {country: "NOR", value:89},
+            {country: "SWE", value:89},
+            {country: "SWIZ", value:0},
+            {country: "UK", value:81},
+            {country: "US", value:89}
+          ]
+        },
+        {
+          'q': "Colon cancer five-year relative survival rate",
+          data: [
+            {country: "AUS", value: 69},
+            {country: "CAN", value: 64},
+            {country: "FRA", value: 0},
+            {country: "GER", value: 64},
+            {country: "NETH", value: 64},
+            {country: "NZ", value: 63},
+            {country: "NOR", value: 64},
+            {country: "SWE", value: 65},
+            {country: "SWIZ", value: 0},
+            {country: "UK", value: 56},
+            {country: "US", value: 64}
           ]
         },
       ]
