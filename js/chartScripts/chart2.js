@@ -336,7 +336,7 @@ function createQuestionSet(){
     .style('opacity', function(d,i){
       return (d.questionSet.split(' ').join('') + 'Id') === selectedSubsection ? 1 : .3;
     })
-    .classed('notActive', function(d){
+    .classed('notActive', function(){
       return ((d.questionSet.split(' ').join('') + 'Id') !== selectedSubsection)
     })
   }
