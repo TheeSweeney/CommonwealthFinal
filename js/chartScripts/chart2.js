@@ -137,6 +137,8 @@ function createChart(dataSet, range, axisLabel){
 
   function plot(params){
 
+    d3.select('#yAxisLabel').remove();
+
     //enter
     this.selectAll('.bar')
           .data(params.data)
@@ -148,11 +150,14 @@ function createChart(dataSet, range, axisLabel){
           .enter()
             .append('text')
             .classed('barLabel', true)
+
     if(!initial){
+
       d3.select('#display')//Top Label
         .append('text')
         .attr('x', 0)
         .attr('y',-10)
+        .attr('id', 'yAxisLabel')
         .html(axisLabel)
 
       d3.select('#directions').remove();
