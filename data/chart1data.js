@@ -334,59 +334,103 @@ var data = {
     {value: 9.3798, year: 2014 }
   ],
   'France': [
-    {value: 8.1623, year: 1990 },
-    {value: 8.4044, year: 1991 },
-    {value: 8.641, year: 1992 },
-    {value: 9.0573, year: 1993 },
-    {value: 9.0376, year: 1994 },
-    {value: 10.1126, year: 1995 },
-    {value: 10.1087, year: 1996 },
-    {value: 9.975, year: 1997 },
-    {value: 9.8647, year: 1998 },
-    {value: 9.8569, year: 1999 },
-    {value: 9.7745, year: 2000 },
-    {value: 9.8869, year: 2001 },
-    {value: 10.2203, year: 2002 },
-    {value: 10.4283, year: 2003 },
-    {value: 10.5347, year: 2004 },
-    {value: 10.5999, year: 2005 },
-    {value: 10.639, year: 2006 },
-    {value: 10.5639, year: 2007 },
-    {value: 10.6929, year: 2008 },
-    {value: 11.4709, year: 2009 },
-    {value: 11.3424, year: 2010 },
-    {value: 11.3372, year: 2011 },
-    {value: 11.486, year: 2012 },
-    {value: 11.5889, year: 2013 },
-    {value: 11.7564, year: 2014 }
+    {value: 7.9585, year: 1990 },
+    {value: 8.1803, year: 1991 },
+    {value: 8.4026, year: 1992 },
+    {value: 8.8086, year: 1993 },
+    {value: 8.7929, year: 1994 },
+    {value: 9.8299, year: 1995 },
+    {value: 9.8337, year: 1996 },
+    {value: 9.7085, year: 1997 },
+    {value: 9.6097, year: 1998 },
+    {value: 9.6108, year: 1999 },
+    {value: 9.5411, year: 2000 },
+    {value: 9.6652, year: 2001 },
+    {value: 9.9818, year: 2002 },
+    {value: 10.0411, year: 2003 },
+    {value: 10.1242, year: 2004 },
+    {value: 10.1798, year: 2005 },
+    {value: 10.0553, year: 2006 },
+    {value: 9.9811, year: 2007 },
+    {value: 10.1067, year: 2008 },
+    {value: 10.8123, year: 2009 },
+    {value: 10.7189, year: 2010 },
+    {value: 10.7089, year: 2011 },
+    {value: 10.8088, year: 2012 },
+    {value: 10.9167, year: 2013 },
+    {value: 11.1116, year: 2014 }
   ],
-  'Sweden1': [
-    {value: 11.2635, year: 2011 },
-    {value: 11.4957, year: 2012 },
-    {value: 11.6534, year: 2013 },
-    {value: 11.7127, year: 2014 }
-  ],
-  'Sweden2': [
-    {value: 8.4021, year: 1980 },
-    {value: 8.536, year: 1981 },
-    {value: 8.6436, year: 1982 },
-    {value: 8.5546, year: 1983 },
-    {value: 8.3557, year: 1984 },
-    {value: 7.9027, year: 1985 },
-    {value: 7.6456, year: 1986 },
-    {value: 7.6698, year: 1987 },
-    {value: 7.6046, year: 1988 },
-    {value: 7.6021, year: 1989 },
-    {value: 7.5946, year: 1990 },
-    {value: 7.554, year: 1991 },
-    {value: 7.812, year: 1992 },
-    {value: 8.1152, year: 1993 },
-    {value: 7.7227, year: 1994 },
-    {value: 7.6517, year: 1995 },
-    {value: 7.8688, year: 1996 },
-    {value: 7.6834, year: 1997 },
-    {value: 7.748, year: 1998 },
-    {value: 7.8334, year: 1999 },
-    {value: 7.7847, year: 2000 },
+  'Sweden': [
+    {value: 7.8355, year: 1980 },
+    {value: 7.9395, year: 1981 },
+    {value: 8.0263, year: 1982 },
+    {value: 7.9372, year: 1983 },
+    {value: 7.7454, year: 1984 },
+    {value: 7.3522, year: 1985 },
+    {value: 7.1211, year: 1986 },
+    {value: 7.1996, year: 1987 },
+    {value: 7.1162, year: 1988 },
+    {value: 7.1753, year: 1989 },
+    {value: 7.2564, year: 1990 },
+    {value: 7.2437, year: 1991 },
+    {value: 7.5283, year: 1992 },
+    {value: 7.7717, year: 1993 },
+    {value: 7.3769, year: 1994 },
+    {value: 7.2918, year: 1995 },
+    {value: 7.4957, year: 1996 },
+    {value: 7.3177, year: 1997 },
+    {value: 7.4022, year: 1998 },
+    {value: 7.4146, year: 1999 },
+    {value: 7.4124, year: 2000 },
+    {value: 8.0342, year: 2001 },
+    {value: 8.3621, year: 2002 },
+    {value: 8.4639, year: 2003 },
+    {value: 8.2614, year: 2004 },
+    {value: 8.2774, year: 2005 },
+    {value: 8.1611, year: 2006 },
+    {value: 8.0739, year: 2007 },
+    {value: 8.3131, year: 2008 },
+    {value: 8.9445, year: 2009 },
+    {value: 8.4864, year: 2010 },
+    {value: 10.679, year: 2011 },
+    {value: 10.9382, year: 2012 },
+    {value: 11.1014, year: 2013 },
+    {value: 11.1819, year: 2014 }
   ]
 };
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+ 

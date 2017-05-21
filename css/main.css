@@ -26,7 +26,6 @@
 
 #container1 .chartOnetrendline{
 	fill: none;
-	stroke: #ccc;
 }
 
 #container1 .gridline line{
@@ -76,13 +75,13 @@
 #container1 .Francepoints{
 	fill: rgb(57,123,122);	
 }
-#container1 #Sweden1line, #container1 #Sweden2line, #container1 .Sweden2chartOneInfoBox, #container1 .Sweden1chartOneInfoBox{
+#container1 #Swedenline, #container1 #Swedenline, #container1 .SwedenchartOneInfoBox, #container1 .SwedenchartOneInfoBox{
 	stroke:rgb(88,191,191);
 }
-#container1 #Sweden1key, #container1 #Sweden1keyText{
+#container1 #Swedenkey, #container1 #SwedenkeyText{
 	fill: rgb(88,191,191);
 }
-#container1 .Sweden1points, #container1 .Sweden2points{
+#container1 .Swedenpoints, #container1 .Swedenpoints{
 	fill: rgb(88,191,191);	
 }
 #container1 #Switzerlandline, #container1 .SwitzerlandchartOneInfoBox{
