@@ -232,7 +232,7 @@ function yAxesAndLabelsFive(params, height, width) {//TODO factor out to prevent
           return xFive(d.x)
         })
         .attr('y', function(d, i){
-          return yFive(d.y) - 8
+          return yFive(d.y) + 15;
         })
         .attr('fill', 'black')
         .text(function(d, i){
