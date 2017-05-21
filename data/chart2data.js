@@ -1078,7 +1078,7 @@ var subsectionData = {
         {
           'q': "Rated medical care from regular provider was fair or poor",
           range:[-10, 20],
-          yAxisLabel: 'Percent difference between high and low income',
+          yAxisLabel: 'Percent difference between high and low income individuals',
           data: [
             {country: "AUS", value: 03},
             {country: "CAN", value: 03},
@@ -1096,7 +1096,7 @@ var subsectionData = {
         {
           'q': "Had any cost-related access problem to medical care in the past year",
           range:[0, 30],
-          yAxisLabel: 'Percent difference between high and low income',
+          yAxisLabel: 'Percent difference between high and low income individuals',
           data: [
             {country: "AUS", value: 11},
             {country: "CAN", value: 19},
@@ -1114,7 +1114,7 @@ var subsectionData = {
         {
           'q': "Skipped dental care or check up because of cost in the past year",
           range:[-10, 40],
-          yAxisLabel: 'Percent difference between high and low income',
+          yAxisLabel: 'Percent difference between high and low income individuals',
           data: [
             {country: "AUS", value: 1},
             {country: "CAN", value: 24},
@@ -1132,7 +1132,7 @@ var subsectionData = {
         {
           'q': "Had serious problems paying or was unable to pay medical bills",
           range:[0, 50],
-          yAxisLabel: 'Percent difference between high and low income',
+          yAxisLabel: 'Percent difference between high and low income individuals',
           data: [
             {country: "AUS", value: 06},
             {country: "CAN", value: 1},
@@ -1150,7 +1150,7 @@ var subsectionData = {
         {
           'q': "Somewhat or very difficult to obtain after-hours care",
           range:[-10, 30],
-          yAxisLabel: 'Percent difference between high and low income',
+          yAxisLabel: 'Percent difference between high and low income individuals',
           data: [
             {country: "AUS", value: 14},
             {country: "CAN", value: 08},
@@ -1168,7 +1168,7 @@ var subsectionData = {
         {
           'q': "Waited two months or longer for specialist appointment",
           range:[-20, 20],
-          yAxisLabel: 'Percent difference between high and low income',
+          yAxisLabel: 'Percent difference between high and low income individuals',
           data: [
             {country: "AUS", value: 1},
             {country: "CAN", value: 02},
@@ -1186,7 +1186,7 @@ var subsectionData = {
         {
           'q': "Specialist lacked medical history or regular doctor not informed about specialist care in the past two years",
           range:[-10, 20],
-          yAxisLabel: 'Percent difference between high and low income',
+          yAxisLabel: 'Percent difference between high and low income individuals',
           data: [
             {country: "AUS", value: 12},
             {country: "CAN", value: 12},
@@ -1204,7 +1204,7 @@ var subsectionData = {
         {
           'q': "Have a regular doctor or place",
           range:[-10, 20],
-          yAxisLabel: 'Percent difference between high and low income',
+          yAxisLabel: 'Percent difference between high and low income individuals',
           data: [
             {country: "AUS", value: 05},
             {country: "CAN", value: 02},
@@ -1222,7 +1222,7 @@ var subsectionData = {
         {
           'q': "Regular doctor always or often spent enough time with them and explained things in a way they could understand",
           range:[-10, 30],
-          yAxisLabel: 'Percent difference between high and low income',
+          yAxisLabel: 'Percent difference between high and low income individuals',
           data: [
             {country: "AUS", value: 05},
             {country: "CAN", value: 09},
@@ -1240,7 +1240,7 @@ var subsectionData = {
         {
           'q': "Regular doctor always or often knew important information about their medical history",
           range:[-10, 40],
-          yAxisLabel: 'Percent difference between high and low income',
+          yAxisLabel: 'Percent difference between high and low income individuals',
           data: [
             {country: "AUS", value: 05},
             {country: "CAN", value: 07},
@@ -1258,7 +1258,7 @@ var subsectionData = {
         {
           'q': "Talked with provider about healthy diet, exercise and physical activity in the past two years",
           range:[-20, 20],
-          yAxisLabel: 'Percent difference between high and low income',
+          yAxisLabel: 'Percent difference between high and low income individuals',
           data: [
             {country: "AUS", value: -05},
             {country: "CAN", value: 04},

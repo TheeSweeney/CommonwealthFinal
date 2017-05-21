@@ -214,7 +214,8 @@ function createChart(dataSet, range, axisLabel){
             }
           })
           .text(function(d,i){
-            if(currentRow === "HealthCareOutcomesRow") return d.value
+            console.log(axisLabel.slice(0, 7))
+            if(axisLabel.slice(0, 7) !== 'Percent') return d.value
             return d.value === 0 ? 'Data' : (d.value + '%');
           })
           .attr('fill', function(d,i){
