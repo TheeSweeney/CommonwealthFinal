@@ -65,7 +65,7 @@ function plotAxes(params){//duplicated in ex1
         .append('text')
         .style('font-size', '12px')
         .style('fill', '#808080')
-        .attr('x', 150)
+        .attr('x', 10)
         .attr('y',-20)
         .text('Deaths per 100,000 population')
 
@@ -73,20 +73,20 @@ function plotAxes(params){//duplicated in ex1
       .append('circle')
       .attr('r', 4)
       .attr('fill', 'rgb(250, 202, 168)')
-      .attr('cx', 650)
+      .attr('cx', widthFour - 100)
       .attr('cy', -30)
 
   this.select('.y.axis')// new key point
       .append('circle')
       .attr('r', 4)
       .attr('fill', 'rgb(243, 123, 49)')
-      .attr('cx', 650)
+      .attr('cx', widthFour - 100)
       .attr('cy', -15)
 
    this.select('.y.axis')// old key point
       .append('text')
       .attr('r', 4)
-      .attr('x', 660)
+      .attr('x', widthFour - 90)
       .attr('y', -30)
       .text('2004')
       .classed('chart4keyText', true)
@@ -94,7 +94,7 @@ function plotAxes(params){//duplicated in ex1
   this.select('.y.axis')// new key point
       .append('text')
       .attr('r', 4)
-      .attr('x', 660)
+      .attr('x', widthFour - 90)
       .attr('y', -15)
       .text('2014')
       .classed('chart4keyText', true)
