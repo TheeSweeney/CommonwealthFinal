@@ -131,6 +131,37 @@ function plotLines(params){
       .remove();
 }
 
+function plotDelta(params){
+  //enter
+  this.selectAll('.deltaBar')
+      .data(params.data)
+      .enter()
+        .append('rect')
+        .classed('deltaBar bar', true)
+        .attr('id', function(d){
+          return d.country + 'deltaBar';
+        })
+  //update
+  this.selectAll('.deltaBar')
+      .transition()
+      .duration(500)
+      .attr('x', function(d,i){
+        return x(d.rank - 1)
+      })
+      .attr('y', function(d,i){
+        return y(d[params.year])
+      })
+      .attr('width', 1)
+      .attr('height', function(d,i){
+        return y(d['2014']) - y(d[params.year])
+      })
+  //exit
+  this.selectAll('.deltaBar')
+      .data(params.data)
+      .exit()
+      .remove();
+}
+
 function infoBox(d){
   this.append('rect')
       .attr('x', function(){
@@ -260,6 +291,11 @@ plotAxes.call(chart, {
 
 function plot(data) {
   plotLines.call(chart,{
+    data: data,
+    year: '2014'
+  })
+
+  plotDelta.call(chart,{//plot delta lines
     data: data,
     year: '2004'
   })
