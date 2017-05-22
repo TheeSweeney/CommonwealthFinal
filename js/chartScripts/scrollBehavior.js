@@ -6,13 +6,13 @@ var heightHero = $('.hero-section').height()
 var heightNav = $('.nav-holder').height()
 var heightChap1 = $('#chapter1').height()
 var heightChap2 = $('#chapter2').height()
+var heightChap3 = $('#chapter3').height()
 
 
-var initial = true
-  var startPos;
+var initial = true;
+var startPos;
+
 $(window).scroll(function() {
-
-   
    var hT = $('#exhibitThreeDiv').offset().top,
        hH = $('#exhibitThreeDiv').outerHeight(),
        wH = $(window).height(),
@@ -21,9 +21,8 @@ $(window).scroll(function() {
     startPos = hT+hH-heightHeader - heightNav - 425
     initial = false;
   }
-    console.log((startPos), wS);
+    console.log((startPos + heightChap3 - hH), wS);
    if (wS > (startPos)){
-    console.log('here')
     $('#exhibitThreeDiv').css({
       'position': 'fixed',
       'top': '76px',
@@ -32,8 +31,17 @@ $(window).scroll(function() {
       'left': '418.8px'
     })
    }
-   if (wS < (startPos)){
-    console.log('rhere')
+   if (wS > (startPos + heightChap3 - hH - 60) ){//scroll down
+    $('#exhibitThreeDiv').css({
+      'position': 'absolute',
+      'top': 'auto',
+      'right': '0px',
+      'bottom': '0px',
+      'left': '40%',
+      'max-height': 'none'
+    })
+   }
+   if (wS < (startPos)){//scroll up
     $('#exhibitThreeDiv').css({
       'position': 'absolute',
       'top': '',
