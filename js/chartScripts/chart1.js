@@ -151,7 +151,6 @@ function removeInfoBox(){
 }
 
 function infoHover(d, country){
-  console.log(country.slice(0,-8), clicked)
 
   if(clicked.length === 0 ||  clicked.includes(country.slice(0,-8))){
     removeInfoBox.call(this)
@@ -299,7 +298,7 @@ function plotChart1LineAndPoints(params){
       })
 
 
-  this.selectAll('.chartOnepoints' + countryName)
+  this.selectAll(countryName + '.chartOnepoints')
     .data(params.data)
     .enter()
       .append('circle')
@@ -307,6 +306,11 @@ function plotChart1LineAndPoints(params){
         return fullWidth ? 3 : 2;
       })
       .classed(countryName + 'chartOnepoints point', true)
+      .on('mouseover', function(d){
+        var country = d3.select(this)[0][0].classList[0].slice(0, d3.select(this)[0][0].classList[0].length - 6);
+        mouseOverFade.call(this, params);
+        infoHover.call(chartOne, d, country)
+      })
   //update
   this.selectAll('.chartOnetrendline')
       .attr('d', function(d){
@@ -320,11 +324,7 @@ function plotChart1LineAndPoints(params){
       .attr('cy', function(d){
         return yOne(d.value)
       })
-      .on('mouseover', function(d){
-            params.country = d3.select(this)[0][0].classList[0].slice(0, d3.select(this)[0][0].classList[0].length - 6);
-            mouseOverFade.call(this, params);
-            infoHover.call(chartOne, d, params.country)
-        })
+
 }
 
 function resizeChart1(){
