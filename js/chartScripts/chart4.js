@@ -122,7 +122,7 @@ function plotLines(params){
       })
       .attr('width', 1)
       .attr('height', function(d,i){
-        return heightFour - y(d[params.year])
+        return params.year == '2004' ? y(d['2014']) - y(d[params.year]) : heightFour - y(d[params.year])
       })
   //exit
   this.selectAll('.bar')
@@ -131,36 +131,36 @@ function plotLines(params){
       .remove();
 }
 
-function plotDelta(params){
-  //enter
-  this.selectAll('.deltaBar')
-      .data(params.data)
-      .enter()
-        .append('rect')
-        .classed('deltaBar bar', true)
-        .attr('id', function(d){
-          return d.country + 'deltaBar';
-        })
-  //update
-  this.selectAll('.deltaBar')
-      .transition()
-      .duration(500)
-      .attr('x', function(d,i){
-        return x(d.rank - 1)
-      })
-      .attr('y', function(d,i){
-        return y(d[params.year])
-      })
-      .attr('width', 1)
-      .attr('height', function(d,i){
-        return y(d['2014']) - y(d[params.year])
-      })
-  //exit
-  this.selectAll('.deltaBar')
-      .data(params.data)
-      .exit()
-      .remove();
-}
+// function plotDelta(params){
+//   //enter
+//   this.selectAll('.deltaBar')
+//       .data(params.data)
+//       .enter()
+//         .append('rect')
+//         .classed('deltaBar bar', true)
+//         .attr('id', function(d){
+//           return d.country + 'deltaBar';
+//         })
+//   //update
+//   this.selectAll('.deltaBar')
+//       .transition()
+//       .duration(500)
+//       .attr('x', function(d,i){
+//         return x(d.rank - 1)
+//       })
+//       .attr('y', function(d,i){
+//         return y(d[params.year])
+//       })
+//       .attr('width', 1)
+//       .attr('height', function(d,i){
+//         return y(d['2014']) - y(d[params.year])
+//       })
+//   //exit
+//   this.selectAll('.deltaBar')
+//       .data(params.data)
+//       .exit()
+//       .remove();
+// }
 
 function infoBox(d){
   this.append('rect')
@@ -275,11 +275,11 @@ function plotPoints(params){
 }
 
 sort2014_btn.on('click', function(){
-  plot(chart4data['2014Ascending']);
+  plot('2014', chart4data['2014Ascending']);
 })
 
 sortMost_btn.on('click', function(){
-  plot(chart4data['diffMost']);
+  plot('2004', chart4data['diffMost']);
 })
 
 plotAxes.call(chart, {
@@ -289,16 +289,12 @@ plotAxes.call(chart, {
   }
 })
 
-function plot(data) {
+function plot(year, data) {
   plotLines.call(chart,{
     data: data,
-    year: '2014'
+    year: year
   })
 
-  plotDelta.call(chart,{//plot delta lines
-    data: data,
-    year: '2004'
-  })
 
   plotPoints.call(chart, {
     data: data,
@@ -365,7 +361,7 @@ function resize4(params){
     }
   })
 
-  plot(chart4data['2014Ascending'])
+  plot('2014', chart4data['2014Ascending'])
 
 }
 
