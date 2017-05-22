@@ -363,23 +363,22 @@ function createSubsections(rowId){
   d3.select('#chartTwo').remove();
   d3.selectAll('.subsectionBar').remove();
   initial = true;
+  console.log(rowId)
 
   var activeSubset = subsectionData[rowId.slice(0, -3) + 'Questions'];
 
-  createChart(subsectionData.emptyChart)
-
-  
+  createChart(subsectionData.emptyChart);
 
   d3.select('.activeRow').selectAll('.subsectionBar')
     .data(activeSubset)
     .enter()
       .append('text')
       .html(function(d){
-        questionSets.push(d.questionSet)
+        questionSets.push(d.questionSet);
         return d.questionSet;
       })
       .attr('id', function(d){
-        return (d.questionSet.split(' ').join('') + 'Id')
+        return (d.questionSet.split(' ').join('') + 'Id');
       })
       .style('height', '20px')
       .style('width', '50%')
@@ -388,10 +387,16 @@ function createSubsections(rowId){
         .classed('subsectionBar', true)
         .append('text')
           .attr('id', function(d){
-            return d.questionSet.split(' ').join('') + 'PlusMinus'
+            return d.questionSet.split(' ').join('') + 'PlusMinus';
           })
           .style('float', 'right')
-          .html('&#x25bc;')
+          .html('&#x25bc;');
+  if(rowId = 'EquityRow'){
+    d3.select('.subsectionBar')
+      .append('div')
+      .attr('id', 'equityNote')
+      .html('Difference Between Low- and High-Income Individuals')    
+  }
 
   d3.selectAll('.subsectionBar')
     .append('div')
@@ -399,15 +404,16 @@ function createSubsections(rowId){
     .style('overflow', 'auto')
     .classed('questionSet', true)
     .attr('id', function(d, i){
-      return d.questionSet.split(' ').join('') + 'QuestionSet'
-    })
+      return d.questionSet.split(' ').join('') + 'QuestionSet';
+    });
 
   
   d3.selectAll('.subsectionBar')
     .on('click', function(){
-      createQuestionSet.call(this)
-      d3.select(this).style('opacity', 1)
-    })
+      createQuestionSet.call(this);
+      d3.select(this).style('opacity', 1);
+    });
+
 
 
 }
@@ -421,29 +427,29 @@ function openSubsection(data){
       .remove();
 
   d3.selectAll('.plusMinus')
-    .html('+')
+    .html('+');
 
   d3.select('#' + currentRow.slice(0, -3) + 'PlusMinus')
-    .html('-')
+    .html('-');
 
   if( currentRow === activeRowId) alreadyActive = true;
 
-  activeRowId = rowId
+  activeRowId = rowId;
     
   d3.select('.activeRow').classed('activeRow', false);
   
-  $('#' + rowId).next("tr").find('td').addClass('activeRow')
+  $('#' + rowId).next("tr").find('td').addClass('activeRow');
   $('#container2').find("tr:not(.odd)").hide();
   $('#' + rowId).next("tr").toggle();
   
   if(alreadyActive){
     d3.select('#' + currentRow.slice(0, -3) + 'PlusMinus')
-      .html('+')
+      .html('+');
 
     $('#' + rowId).next('tr').toggle();
-    d3.select('.activeRow').classed('activeRow', false)
+    d3.select('.activeRow').classed('activeRow', false);
 
-    activeRowId = 'none'
+    activeRowId = 'none';
   }
 
   createSubsections.call(this, rowId);

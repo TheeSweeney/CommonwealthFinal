@@ -240,6 +240,10 @@
   text-align: left;
 }
 
+#container2 #equityNote {
+	padding-left: 10px;
+}
+
 #container2 .questionSet{
 	background-color: white;
 	color: black;
