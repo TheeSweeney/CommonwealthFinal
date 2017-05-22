@@ -1,6 +1,7 @@
 $( document ).ready(function(){
 var tableWidth = window.outerWidth > 1100 ? 1100 : window.outerWidth - 20;
 
+if(tableWidth < 943) tableWidth = 943;//table minimum width
 
 var w = 432;
 var h = 250;

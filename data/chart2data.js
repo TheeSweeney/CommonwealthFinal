@@ -790,7 +790,7 @@ var subsectionData = {
       ]
     }
   ],
-  AdministrativeBurdenQuestions: [
+  AdministrativeEfficiencyQuestions: [
     {
       questionSet: 'Administrative Efficiency',
       sectionData: [
@@ -1122,11 +1122,11 @@ var subsectionData = {
           range:[-10, 40],
           yAxisLabel: 'Percent difference between high and low income individuals',
           data: [
-            {country: "AUS", value: 1},
+            {country: "AUS", value: 10},
             {country: "CAN", value: 24},
             {country: "FRA", value: 17},
             {country: "GER", value: -01},
-            {country: "NETH", value: 1},
+            {country: "NETH", value: 10},
             {country: "NZ", value: 11},
             {country: "NOR", value: 19},
             {country: "SWE", value: 14},
@@ -1141,13 +1141,13 @@ var subsectionData = {
           yAxisLabel: 'Percent difference between high and low income individuals',
           data: [
             {country: "AUS", value: 06},
-            {country: "CAN", value: 1},
+            {country: "CAN", value: 10},
             {country: "FRA", value: 34},
-            {country: "GER", value: 1},
+            {country: "GER", value: 10},
             {country: "NETH", value: 11},
             {country: "NZ", value: 11},
             {country: "NOR", value: 08},
-            {country: "SWE", value: 1},
+            {country: "SWE", value: 10},
             {country: "SWIZ", value: 14},
             {country: "UK", value: 03},
             {country: "US", value: 18}
@@ -1168,7 +1168,7 @@ var subsectionData = {
             {country: "SWE", value: 04},
             {country: "SWIZ", value: 02},
             {country: "UK", value: -01},
-            {country: "US", value: 1}
+            {country: "US", value: 10}
           ]
         },
         {
@@ -1176,10 +1176,10 @@ var subsectionData = {
           range:[-20, 20],
           yAxisLabel: 'Percent difference between high and low income individuals',
           data: [
-            {country: "AUS", value: 1},
+            {country: "AUS", value: 10},
             {country: "CAN", value: 02},
             {country: "FRA", value: -08},
-            {country: "GER", value: "--"},
+            {country: "GER", value: 0},
             {country: "NETH", value: 01},
             {country: "NZ", value: 14},
             {country: "NOR", value: 02},
