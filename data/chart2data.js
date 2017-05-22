@@ -132,6 +132,8 @@ var subsectionData = {
         },
         {
           'q': "Avoidable hospital admissions for diabetes, age-sex standardized rates per 100,000",
+          yAxisLabel: 'Age-sex standardized rates per 100,000',
+          range: [0,290],
           data:[
             {country: "AUS", value: 141},
             {country: "CAN", value: 95},
@@ -148,6 +150,8 @@ var subsectionData = {
         },
         {
           'q': "Avoidable hospital admissions for asthma, age-sex standardized rates per 100,000",
+          yAxisLabel: 'Age-sex standardized rates per 100,000',
+          range:[0,140],
           data:[
             {country: "AUS", value: 65},
             {country: "CAN", value: 15},
@@ -164,6 +168,8 @@ var subsectionData = {
         },
         {
           'q': "Avoidable hospital admissions for congestive heart failure, age-sex standardized rates per 100,000",
+          yAxisLabel: 'Age-sex standardized rates per 100,000',
+          range: [0, 500],
           data:[
            {country:  "AUS", value: 240},
            {country:  "CAN", value: 179},
