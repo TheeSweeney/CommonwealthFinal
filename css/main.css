@@ -276,6 +276,12 @@
 }
 
 /*Chart3*/
+#exhibitThreeDiv {
+	position: absolute;
+	left: 40%;
+	padding-left: 50px;
+}
+
 #container3 #controls{
   margin-bottom: 10px;
 }
